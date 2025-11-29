@@ -1,7 +1,7 @@
 # configured aws provider with proper credentials
 provider "aws" {
   region  = "us-east-1"
-  profile = "yusuf"
+  profile = "zaraoyee"
 }
 
 
@@ -136,7 +136,7 @@ resource "aws_instance" "ec2_instance" {
   instance_type          = "t2.medium"
   subnet_id              = aws_default_subnet.default_az1.id
   vpc_security_group_ids = [aws_security_group.ec2_security_group6.id]
-  key_name               = "devopskeypair"
+  key_name               = "zaraoyee"
   count                  = 3
 
   tags = {
@@ -151,4 +151,5 @@ output "container_url" {
  value = ["${aws_instance.ec2_instance.*.public_ip}"]
 
 }
+
 
